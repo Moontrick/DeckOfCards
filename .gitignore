@@ -50,4 +50,5 @@ Temp
 *.pidb
 *.unityproj
 *.sln
+*.suo
 *.userprefs
