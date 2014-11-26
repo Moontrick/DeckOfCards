@@ -16,9 +16,15 @@ public class Deck : MonoBehaviour
     {
         _cards = new List<Card>();
 
-        foreach(Value value in System.Enum.GetValues(typeof(Value)))
+        Initialize();
+    }
+
+
+    private void Initialize()
+    {
+        foreach (Value value in System.Enum.GetValues(typeof(Value)))
         {
-            foreach(Suit suit in System.Enum.GetValues(typeof(Suit)))
+            foreach (Suit suit in System.Enum.GetValues(typeof(Suit)))
             {
                 Card card = Instantiate(cardPrefab) as Card;
                 card.Initialize(suit, value);
@@ -29,9 +35,6 @@ public class Deck : MonoBehaviour
                 card.gameObject.name = card.Name;
             }
         }
-
-        foreach (Card card in _cards)
-            Debug.Log(card.Name);
     }
 
 
