@@ -1,15 +1,22 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Dealer : MonoBehaviour {
+public class Dealer : MonoBehaviour 
+{
 
-	// Use this for initialization
-	void Start () {
-	
+
+	[SerializeField]
+	Deck _deckPrefab;
+
+
+	private void Awake()
+	{
+		if (_deckPrefab != null)
+		{
+			Deck deck = Instantiate(_deckPrefab) as Deck;
+			deck.transform.parent = this.transform;
+		}
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+
+
 }
