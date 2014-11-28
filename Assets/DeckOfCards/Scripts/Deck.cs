@@ -44,6 +44,7 @@ public class Deck : MonoBehaviour
 
     /// <summary>
     /// Shuffle the deck
+	/// Probably a better way to do this to avoid iterating through the list 3 times, but works for now
     /// </summary>
     public void Shuffle()
     {
@@ -63,8 +64,10 @@ public class Deck : MonoBehaviour
                 Card tmp = _cards[i];
                 _cards[i] = _cards[randIndex];
                 _cards[randIndex] = tmp;
-                _cards[randIndex].transform.parent = this.transform;
             }
+
+			foreach(Card card in _cards)
+				card.transform.parent = gameObject.transform;
         }
     }
 
