@@ -11,6 +11,16 @@ public class Deck : MonoBehaviour
 
     private List<Card> _cards;
 
+	public Card TopCard
+	{
+		get 
+		{
+			Card card = _cards[0];
+			_cards.RemoveAt (0);
+			return card;
+		}
+	}
+
 
     private void Awake()
     {
